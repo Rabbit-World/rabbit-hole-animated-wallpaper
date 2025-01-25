@@ -1,0 +1,17 @@
+{
+  "AppVersion": "1.0",
+  "Title": "The rabbit hole",
+  "Thumbnail": "preview.jpg",
+  "Preview": "preview.gif",
+  "Desc": "Shader generated deep rabbit hole.",
+  "Author": "the-rabbit-clown",
+  "License": null,
+  "Contact": "https://rabbit-world.github.io",
+  "Type": 1,
+  "FileName": "index.html",
+  "Arguments": null,
+  "IsAbsolutePath": false,
+  "Id": null,
+  "Tags": null,
+  "Version": 0
+}
