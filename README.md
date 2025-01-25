@@ -4,6 +4,6 @@ Shader generated deep rabbit hole.
 
 <div align="center">
   <a href="https://rabbit-world.github.io">
-    <img src="https://github.com/Rabbit-World/rabbit-hole-animated-wallpaper/preview.gif" />
+    <img src="https://github.com/Rabbit-World/rabbit-hole-animated-wallpaper/blob/main/preview.gif?raw=true" />
   </a>
 </div>
