@@ -8,7 +8,7 @@ Shader generated deep rabbit hole.
   </a>
 </div>
 
-### 🎥 Video Preview for Settengs
+### 🎥 Preview for Settungs
 
 <div align="center">
   <a href="https://rabbit-world.github.io">
