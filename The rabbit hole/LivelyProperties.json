@@ -1,5 +1,4 @@
 {
-  //div by 100
   "hillOpacityFac": {
     "max": 1000,
     "min": 0,
@@ -42,5 +41,11 @@
     "type": "checkbox",
     "value": true,
     "text": "Month/Day Format"
+  },
+  "language": {
+    "type": "dropdown",
+    "items": ["English", "Italian", "Francais", "Deutch", "Espanol", "Romanian" ],
+    "value": 0,
+    "text": "Select Language"
   }
 }

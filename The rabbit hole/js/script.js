@@ -62,13 +62,32 @@ const renderLoop = () => {
 
 //lively stuffs
 
-let noClock = false;
+let noClock = true;
 let _12hour =true;
-let noDate=false;
+let noDate=true;
 let mmddyy=true;
 
-const dayArr=["Sunday", "Monday", "Tuesday", "Wednesday", "Thursday", "Friday", "Saturday"];
-//ENGLISH const dayArr=["Domenica", "Lunedì", "Martedì", "Mercoledì", "Giovedì", "Venerdì", "Sabato"];
+//ENGLISH const dayArr=["Sunday", "Monday", "Tuesday", "Wednesday", "Thursday", "Friday", "Saturday"];
+//ITALIAN const dayArr=["Domenica", "Lunedì", "Martedì", "Mercoledì", "Giovedì", "Venerdì", "Sabato"];
+
+//da qui tutto bene
+
+// Dizionari delle lingue
+const languages = {
+  English: ["Sunday", "Monday", "Tuesday", "Wednesday", "Thursday", "Friday", "Saturday"],
+  Italian: ["Domenica", "Lunedì", "Martedì", "Mercoledì", "Giovedì", "Venerdì", "Sabato"],
+  French: ["Dimanche", "Lundi", "Mardi", "Mercredi", "Jeudi", "Vendredi", "Samedi"],
+  German: ["Sonntag", "Montag", "Dienstag", "Mittwoch", "Donnerstag", "Freitag", "Samstag"],
+  Spanish: ["Domingo", "Lunes", "Martes", "Miércoles", "Jueves", "Viernes", "Sábado"],
+  Romanian: ["Sunday", "Monday", "Tuesday", "Wednesday", "Thursday", "Friday", "Saturday"]
+};
+
+// Variabile per memorizzare la lingua corrente (predefinita: Inglese)
+let currentLanguage = "English";
+let dayArr = languages[currentLanguage]; // Array iniziale dei giorni
+
+//fino a qui tutto bene
+
 
 
 let background = "#0e0e0e";
@@ -141,7 +160,7 @@ function UpdateClock() {
   else
     dateEl.innerText=new Intl.DateTimeFormat('en-GB',{'day':'2-digit','month':'2-digit','year':'2-digit'}).format(d).replace(',','');
   
-  dayEl.innerText = dayArr[d.getDay()];
+   dayEl.innerText = dayArr[d.getDay()];
 
   setTimeout(UpdateClock, 1000);
 }
@@ -163,7 +182,16 @@ function livelyPropertyListener(name, val)
     case "mmddyy":
       mmddyy=!val;
       break;
-    case "fontColor":
+    case 'language':
+      // Cambia la lingua corrente in base alla selezione
+      const languageKeys = Object.keys(languages);
+      currentLanguage = languageKeys[val]; // Val è l'indice del dropdown
+      dayArr = languages[currentLanguage]; // Aggiorna l'array dei giorni
+      UpdateClock(); // Aggiorna immediatamente l'orologio con i nuovi giorni
+	  clockPos();
+    return
+      break;
+	case "fontColor":
       document.querySelector(".p-summary").style.color = val; 
       break;
     case "hillColor":
